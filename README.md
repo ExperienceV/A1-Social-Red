@@ -1,6 +1,6 @@
 # A1-SocialRed
 
-Este proyecto es una red social desarrollada utilizando Python en el backend, con tecnologías como FastAPI, MySQL y OAuth2 para la autenticación segura. Para el frontend, se han utilizado tecnologías como Tailwind CSS, TypeScript, Vue y React.
+Este proyecto es una red social desarrollada por el equipo A1-Project utilizando Python en el backend, con tecnologías como FastAPI, MySQL y OAuth2 para la autenticación segura. Para el frontend, se han utilizado tecnologías como Tailwind CSS, TypeScript, Vue y React.
 
 ### Funcionalidades
 

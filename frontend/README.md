@@ -1,14 +1,15 @@
 # A1-SOCIAL-RED Frontend
 
 Este es el repositorio del frontend de A1-SOCIAL-RED.
+By Dani.Dev.
 
 ## Tecnologías
 
-1. TailwindCss
-2. TypeScript
+1. TailwindCss || Si no lo tienes `npm o npx, bun, yarn install -D tailwindcss`
+2. TypeScript || Si no lo tienes `npm o npx, bun, yarn  install typescript --save-dev`
 3. React
 4. Vite
-5. bun
+5. bun ~~No es obligatorio instalarlo~~
 
 ## Instalación
 
@@ -18,7 +19,7 @@ Este es el repositorio del frontend de A1-SOCIAL-RED.
 
 ## Uso
 
-1. Inicia la aplicación con `npm o npx, bun, yarn run dev`.
+1. Inicia la aplicación con `npm o npx, bun, yarn run dev` ¡Desde el directorio`frontend`!.
 2. Accede a `http://localhost:4000` en tu navegador.
 
 ¡Disfruta de A1-SOCIAL-RED!

@@ -1,30 +1,27 @@
-# React + TypeScript + Vite
+# A1-SocialRed
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este proyecto es una red social desarrollada por el equipo A1-Project utilizando Python en el backend, con tecnologías como FastAPI, MySQL y OAuth2 para la autenticación segura. Para el frontend, se han utilizado tecnologías como Tailwind CSS, TypeScript, Vue y React.
 
-Currently, two official plugins are available:
+### Funcionalidades
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- ✨ **Registro de usuarios**: Permite a los usuarios crear una cuenta en la plataforma proporcionando información básica como nombre de usuario, correo electrónico y contraseña.
+- 🔒 **Inicio de sesión seguro**: Utiliza OAuth2 para autenticar a los usuarios de manera segura.
+- 📝 **Publicación de contenido**: Los usuarios pueden crear publicaciones y compartirlas con otros usuarios de la plataforma.
+- 🔄 **Interacción social**: Los usuarios pueden dar "Me gusta", comentar y compartir las publicaciones de otros usuarios.
+- 👤 **Perfil de usuario**: Cada usuario tiene un perfil personalizado donde pueden ver y editar su información, así como ver sus publicaciones y actividades.
+- 🔍 **Búsqueda de usuarios y contenido**: Los usuarios pueden buscar otros usuarios y contenido específico utilizando funciones de búsqueda.
+- 💬 **Grupos de chat**: Posibilidad de crear grupos de chat con varios usuarios para discutir temas específicos.
+- 📬 **Chats individuales**: Los usuarios pueden enviar mensajes privados entre ellos.
+- 📢 **Estados**: Los usuarios pueden publicar estados para compartir lo que están pensando o haciendo en ese momento.
+- 🔐 **Seguridad**: Se implementan medidas de seguridad para proteger los datos de los usuarios y prevenir accesos no autorizados.
 
-## Expanding the ESLint configuration
+### Licencia
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+Este proyecto está bajo la Licencia MIT. Consulta el archivo [LICENSE](LICENSE) para más detalles.
 
-- Configure the top-level `parserOptions` property like this:
+### Contacto
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+Para cualquier consulta o sugerencia, por favor contacta a los creadores del proyecto:
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+- Experience: [GitHub](https://github.com/ExperienceV)
+- DaniDev: [GitHub](https://github.com/PapLion)

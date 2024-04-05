@@ -36,7 +36,7 @@ function LoginPage() {
 
     <p className="mt-10 text-center text-sm text-gray-500">
       Not have a account?
-      <a href="#" className="font-semibold leading-6 text-indigo-600 hover:text-indigo-500">¡Sing up Here!</a>
+      <a href="./Register.tsx" className="font-semibold leading-6 text-indigo-600 hover:text-indigo-500">¡Sing up Here!</a>
     </p>
   </div>
 </div>

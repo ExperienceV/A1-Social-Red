@@ -1,12 +1,12 @@
 import ContactsContainer from "../components/GeneralUi/ContactsContainer";
-import PostUi from "../components/GeneralUi/MainsContent/PostUi";
+import ChatWithPersonUI from "../components/GeneralUi/MainsContent/ChatWithPerson";
 import MenuContainer from "../components/GeneralUi/MenuCotainer";
 import Header from "../components/GeneralUi/HeaderContainer";
 
-function Home() {
+function ChatWithPerson() {
     const homeStyle: React.CSSProperties = {
         display: 'flex',
-        flexDirection: 'column', 
+        flexDirection: 'column',
         height: '100vh',
         backgroundColor: '#000',
         overflow: 'hidden',
@@ -23,11 +23,11 @@ function Home() {
             <Header />
             <div style={contentStyle}>
                 <MenuContainer />
-                <PostUi />
+                <ChatWithPersonUI />
                 <ContactsContainer />
             </div>
         </div>
     )
 }
 
-export default Home;
+export default ChatWithPerson;

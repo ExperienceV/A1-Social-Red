@@ -1,0 +1,13 @@
+.messageContainer {
+    flex: 1;
+    padding: 10px;
+    overflow-y: scroll;
+    scrollbar-width: thin; /* Para Firefox */
+    -ms-overflow-style: none; /* Para Internet Explorer + Edge */
+    background-color: #121212;
+    color: #FFFFFF;
+}
+
+.messageContainer::-webkit-scrollbar {
+    width: 4px; /* Para Chrome, Safari y Opera */
+}

@@ -1,21 +1,21 @@
 import ContactsContainer from "../components/GeneralUi/ContactsContainer";
-import PostUi from "../components/GeneralUi/MainsContent/PostUi";
+import NotificationsUI from "../components/GeneralUi/MainsContent/NotifUi";
 import MenuContainer from "../components/GeneralUi/MenuCotainer";
 import Header from "../components/GeneralUi/HeaderContainer";
 
-function Home() {
+function Notif() {
     const homeStyle: React.CSSProperties = {
         display: 'flex',
-        flexDirection: 'column', 
+        flexDirection: 'column',
         height: '100vh',
-        backgroundColor: '#000',
-        overflow: 'hidden',
+        backgroundColor: '#000', 
+        overflow: 'hidden', 
     };
 
     const contentStyle: React.CSSProperties = {
         display: 'flex',
-        height: 'calc(100vh - 60px)',
-        justifyContent: 'space-between',
+        height: 'calc(100vh - 60px)', 
+        justifyContent: 'space-between', 
     };
 
     return (
@@ -23,11 +23,11 @@ function Home() {
             <Header />
             <div style={contentStyle}>
                 <MenuContainer />
-                <PostUi />
+                <NotificationsUI />
                 <ContactsContainer />
             </div>
         </div>
     )
 }
 
-export default Home;
+export default Notif;

@@ -2,9 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import LoginPage from './expyFnt/login_form.tsx';
+import LoginPage from './expyFnt/login_formwo.tsx';
 import FourZeroFourPage from './pages/FZF.tsx';
-import RegisterPage from './expyFnt/register_form.tsx';
+import RegisterPage from './expyFnt/register_formwo.tsx';
 import Home from './pages/home.tsx';
 import Test from './expyFnt/test.tsx';
 

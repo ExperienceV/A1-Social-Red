@@ -3,12 +3,46 @@ import React, { useState } from 'react';
 function SignInPage() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [mensaje, setMessage] = useState('');
 
-  const handleSubmit = (event: React.FormEvent) => {
+  const data_form = { email, password, mensaje }
+
+  const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
     // Aquí iría la lógica para manejar el inicio de sesión
-    console.log(email, password);
+
+    try {
+      // Realizar Realiza la solicitud method a response.
+      const response = await fetch('http://localhost:8000/Login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data_form),
+      });
+
+      // Verificar si la respuesta fue exitosa
+      if (response.ok) {
+        // Redireccionar a Home con los datos del usuario.
+        console.log('ola')
+
+      } else {
+        // En caso de error en la respuesta, mostrar un mensaje de error
+        const jsonResponse = await response.json();
+        alert(jsonResponse.detail)
+        
+      }
+    } catch (error) {
+      // Manejar errores en la solicitud y mostrar un mensaje de error
+      console.error('Error en la solicitud:', error);
+      setMessage('Error en la solicitud');
+    }
   };
+
+    console.log(email, password);
+
+
+
 
   // Estilos 
   const pageStyle: React.CSSProperties = {
@@ -115,6 +149,6 @@ function SignInPage() {
       </div>
     </div>
   );
-}
-
-export default SignInPage;
+  }
+// Gracias por arreglar el problema mi vida, tkm ❤
+  export default SignInPage;

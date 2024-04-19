@@ -1,15 +1,50 @@
 import React, { useState } from 'react';
 
 function SingUpPage() {
+  const [nick_name, setNickName] = useState('');
+  const [full_name, setFullName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [confirmPassword, setConfirmPassword] = useState('');
+  const [confirm_password, setConfirmPassword] = useState('');
+  const [mensaje, setMessage] = useState('');
 
-  const handleSubmit = (event: React.FormEvent) => {
+  const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
     // Aquí iría la lógica para manejar el registro
-    console.log(email, password, confirmPassword);
+
+    const data_form = { nick_name, full_name, email, password, confirm_password, mensaje }
+
+    try {
+      // Realizar Realiza la solicitud method a response.
+      const response = await fetch('http://localhost:8000/Register', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data_form),
+      });
+
+      // Verificar si la respuesta fue exitosa
+      if (response.ok) {
+        // Redireccionar a Home con los datos del usuario.
+        console.log('ola')
+
+      } else {
+        // En caso de error en la respuesta, mostrar un mensaje de error
+        const jsonResponse = await response.json();
+        alert(jsonResponse.detail)
+        
+      }
+    } catch (error) {
+      // Manejar errores en la solicitud y mostrar un mensaje de error
+      console.error('Error en la solicitud:', error);
+      setMessage('Error en la solicitud');
+    }
   };
+
+
+    console.log(nick_name, full_name, email, password, confirm_password);
+  
 
   // Estilos 
   const pageStyle: React.CSSProperties = {
@@ -98,6 +133,20 @@ function SingUpPage() {
         <form onSubmit={handleSubmit} style={formStyle}>
           <h2>Registrarse</h2>
           <input
+            type="text"
+            value={nick_name}
+            onChange={(e) => setNickName(e.target.value)}
+            placeholder="Nick Name"
+            style={inputStyle}
+          />
+          <input
+            type="text"
+            value={full_name}
+            onChange={(e) => setFullName(e.target.value)}
+            placeholder="Full Name"
+            style={inputStyle}
+          />
+          <input
             type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
@@ -113,7 +162,7 @@ function SingUpPage() {
           />
           <input
             type="password"
-            value={confirmPassword}
+            value={confirm_password}
             onChange={(e) => setConfirmPassword(e.target.value)}
             placeholder="Confirmar Contraseña"
             style={inputStyle}

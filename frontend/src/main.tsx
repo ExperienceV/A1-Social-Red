@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import FourZeroFourPage from './pages/Fzf.tsx';
+import FourZeroFourPage from './pages/FZF.tsx';
 import Home from './pages/Home.tsx';
 import SingInPage from './pages/SingIn.tsx';
 import SignUpPage from './pages/SingUp.tsx';

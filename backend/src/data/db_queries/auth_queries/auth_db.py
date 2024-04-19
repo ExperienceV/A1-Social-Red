@@ -7,7 +7,7 @@ async def register_query(email: str, nick_name:str, name: str, password: str):
     async with conn.cursor() as cursor:
         
         query: str = """INSERT INTO sr_data.users 
-                        (email, nick_name, full_name, password) 
+                        (email, nick_name, name, password) 
                         VALUES (%s, %s, %s, %s)"""
         await cursor.execute(query, (email, nick_name, name, password,))
 

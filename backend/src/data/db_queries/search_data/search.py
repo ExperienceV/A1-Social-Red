@@ -39,7 +39,7 @@ async def srch_email(correo) -> tuple | bool:
         response = await cursor.fetchone()
         if not response:
             return False
-        return response# Implementar la búsqueda por correo electrónico
+        return response
 
 
 # Get password with the email.

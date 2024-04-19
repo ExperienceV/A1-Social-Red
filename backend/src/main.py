@@ -44,34 +44,7 @@ async def enviar_datos(data: Datos):
         return {"mensaje": "Datos recibidos correctamente",
                 "Dato 1" : data.dato1,
                 "Dato2" : data.dato2}
-    
-#@app.post("/register")
-async def register_form(data: Datos):
-    # Buscamos el nick_name en la base de datos.
-    nick_name: tuple = await srch_nickN(data.nick_name)
 
-    # Buscamos el email en la base de datos.
-    email: tuple = await srch_email(data.email)
-
-    # Si el nick_name y el email existen...
-    if nick_name and email:
-        raise HTTPException(status_code=409, detail="El apodo y correo ya estan en uso.")
-    
-    # Si el nick_name existe...
-    elif nick_name:
-        raise HTTPException(status_code=409, detail="El apodo ya esta en uso.")
-    
-    # Si el email existe...
-    elif email:
-        raise HTTPException(status_code=409, detail="El correo ya esta en uso.")
-    
-    # Si ninguno de los datos existe, creamos la cuenta con los datos ingresados.
-    await register_query(
-        email = data.email, 
-        nick_name = data.nick_name, 
-        name = data.full_name, 
-        password = encrypt_data(data.password))
-    raise HTTPException(status_code=200, detail="Registro exitoso.")
 
 @app.post("/Login")
 async def register_form(data: Datos):
@@ -95,4 +68,31 @@ async def register_form(data: Datos):
 
 @app.post("/Register")
 async def test_reg(data: Datos):
-    print(data.nick_name, data.full_name, data.email, data.password, data.confirm_password)
+
+    # Verificamos si existe el nickname ingresado.
+    get_nickn: tuple|bool = await srch_nickN(data.nick_name)
+
+    # Verificamos si existe el email ingresado.
+    get_email: tuple|bool = await srch_email(data.email)
+
+    # Si el email y nickname existe...
+    if get_email and get_nickn:
+        raise HTTPException(status_code=409, detail="El nickname y email ya están en uso.")
+    
+    # Si el nickname existe...
+    if get_nickn:
+        raise HTTPException(status_code=409, detail="El nickname ya está en uso.")
+
+    # Si el email existe...
+    if get_email:
+        raise HTTPException(status_code=409, detail="El email ya está en uso.")
+    
+    if data.password != data.confirm_password:
+        raise HTTPException(status_code=409, detail="Las contraseñas ingresadas no son iguales.")
+    
+    # Si los valores anteriores no existe, creámos la cuenta con los datos ingresados.
+    await register_query(email=data.email, 
+                         nick_name=data.nick_name, 
+                         name=data.full_name, 
+                         password=encrypt_data(data.password))
+    raise HTTPException(status_code=200, detail="Registro exitoso.")

@@ -12,3 +12,4 @@ def check_data(hashed: str, password: str) -> bool:
         return False
     else:
         return check_password_hash(hashed, password)
+    

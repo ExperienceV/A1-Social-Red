@@ -63,7 +63,7 @@ async def getPassword_with_Email(email: str) -> str | bool:
         
 
 # Get full data with email and password.
-async def email_password(email: str, password: str) -> tuple | bool:
+async def email_password(email: str, password: str) -> str | bool:
     conn: aiomysql.connection = await connect_database()
     async with conn.cursor() as cursor:
         query: str = "SELECT password FROM sr_data.users WHERE email = %s AND password = %s"

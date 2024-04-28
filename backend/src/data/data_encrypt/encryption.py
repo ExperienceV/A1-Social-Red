@@ -6,10 +6,9 @@ def encrypt_data(data: str) -> str:
     return data_encrypted
 
 
-# Verifica si la contraseña ingresada y la de la cuenta ingresada son iguales.
+# Verifica si la información ingresada y la existente son iguales.
 def check_data(hashed: str, password: str) -> bool:
     if not hashed:
         return False
     else:
         return check_password_hash(hashed, password)
-    

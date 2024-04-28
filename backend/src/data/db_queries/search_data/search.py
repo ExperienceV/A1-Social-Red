@@ -16,7 +16,6 @@ async def srch_nickN(nick_name) -> tuple | bool:
             return False
         return response
 
-
 # Search a user with the name in the db
 async def srch_name(user_name) -> tuple | bool:
     # Connecto to database
@@ -41,7 +40,6 @@ async def srch_email(correo) -> tuple | bool:
             return False
         return response
 
-
 # Get password with the email.
 async def getPassword_with_Email(email: str) -> str | bool:
     conn: aiomysql.connection = await connect_database() # DB Connect
@@ -61,7 +59,6 @@ async def getPassword_with_Email(email: str) -> str | bool:
         else:
             return False
         
-
 # Get full data with email and password.
 async def email_password(email: str, password: str) -> str | bool:
     conn: aiomysql.connection = await connect_database()
@@ -72,3 +69,56 @@ async def email_password(email: str, password: str) -> str | bool:
         if not response:
             return False
         return response
+
+# Get nick with user_id
+async def nick_id(user_id) -> str | bool:
+    conn: aiomysql.connection = await connect_database()
+    async with conn.cursor() as cursor:
+        query: str = "SELECT nick_name FROM sr_data.users WHERE user_id = %s"
+        await cursor.execute(query, (user_id))
+        response = await cursor.fetchone()
+        if not response:
+            return False
+        return response['nick_name']
+
+
+# Get full data with email and password.
+async def get_contacts(user_id) -> list | bool:
+    conn: aiomysql.connection = await connect_database() # DB connection
+    async with conn.cursor() as cursor: # Cursor instance
+
+
+        # SQL Query
+        sql = """SELECT contact_id, 
+        CASE WHEN user_id1 = %s THEN user_id2 
+        ELSE user_id1 
+        END AS user_id 
+        FROM contacts 
+        WHERE user_id1 = %s OR user_id2 = %s"""
+        
+        # Get contact list
+        await cursor.execute(sql, (user_id, user_id, user_id))
+        contacts_list = await cursor.fetchall()
+
+        if not contacts_list:
+            return False
+        
+        contact_list_nick: list = []
+
+        # For Contact in contact_list
+        for contact in contacts_list:
+            # Get contact id
+            id = contact['user_id']
+             
+            # Get nick name with user_id
+            response = await nick_id(user_id = id)
+
+            # Set nick name in contact_list_nick
+            contact_list_nick.append(response)
+
+        return contact_list_nick
+
+
+
+
+

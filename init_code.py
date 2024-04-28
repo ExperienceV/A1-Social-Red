@@ -1,9 +1,9 @@
 import subprocess
 
 vite_source = "frontend"
-uvicorn_source = "backend/src/routers"
+uvicorn_source = "backend/src"
 
-uvicorn_cmd = "python main.py"
+uvicorn_cmd = "uvicorn main:app --reload"
 
 vite_cmd = "npm run dev"
 

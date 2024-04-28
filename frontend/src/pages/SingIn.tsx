@@ -24,7 +24,10 @@ function SignInPage() {
       // Verificar si la respuesta fue exitosa
       if (response.ok) {
         // Redireccionar a Home con los datos del usuario.
-        console.log('ola')
+        const jsonResponse = await response.json();
+        
+        sessionStorage.setItem('token', jsonResponse.detail)
+        window.location.href = 'http://localhost:5173/Home'
 
       } else {
         // En caso de error en la respuesta, mostrar un mensaje de error

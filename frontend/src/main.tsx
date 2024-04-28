@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import FourZeroFourPage from './pages/FZF.tsx';
-import Home from './pages/Home.tsx';
 import SingInPage from './pages/SingIn.tsx';
 import SignUpPage from './pages/SingUp.tsx';
 import AuthPage from './pages/Auth.tsx';
@@ -12,6 +11,7 @@ import ArchivedPosts from './pages/ArchivedPosts.tsx';
 import Chats from './pages/Chats.tsx';
 import ChatWithPerson from './pages/ChatWithPerson.tsx';
 import Settings from './pages/Settings.tsx';
+import Home from './pages/Home.tsx';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
@@ -27,7 +27,7 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
       <Route path='/Login' element={<SingInPage/>}/>
       <Route path='/Register' element={<SignUpPage/>}/>
       <Route path='/Auth' element={<AuthPage/>}/>
-      <Route path='#' element={<FourZeroFourPage/>}/>
+      <Route path='/404' element={<FourZeroFourPage/>}/>
     </Routes>
     </BrowserRouter>
   </React.StrictMode>,

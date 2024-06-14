@@ -3,6 +3,15 @@ interface CSSProperties {
 }
 
 function ChatsUI() {
+
+    const colors = {
+        background: '#181A1F', // Un gris muy oscuro para el fondo
+        text: '#FFFFFF', // Blanco para el texto
+        chatBackground: '#282C34', // Un gris ligeramente más claro para el fondo de los chats
+        onlineStatus: '#61DAFB', // Un azul claro, vibrante para el estado online
+        offlineStatus: '#888888', // Un gris para el estado offline
+    };
+
     const containerStyle: CSSProperties = {
         display: 'flex',
         flexDirection: 'column',
@@ -11,8 +20,8 @@ function ChatsUI() {
         padding: '1rem',
         overflowY: 'auto',
         width: '100%',
-        backgroundColor: '#121212',
-        color: '#FFFFFF',
+        backgroundColor: colors.background,
+        color: colors.text,
     };
 
     const headerStyle: CSSProperties = {
@@ -22,8 +31,8 @@ function ChatsUI() {
     };
 
     const chatStyle: CSSProperties = {
-        backgroundColor: '#242424',
-        color: '#FFFFFF',
+        backgroundColor: colors.chatBackground,
+        color: colors.text,
         borderRadius: '8px',
         padding: '15px',
         margin: '10px 0',
@@ -44,7 +53,7 @@ function ChatsUI() {
         height: '10px',
         width: '10px',
         borderRadius: '50%',
-        backgroundColor: status === 'online' ? 'green' : 'red',
+        backgroundColor: status === 'online' ? colors.onlineStatus : colors.offlineStatus,
         marginLeft: '5px',
     });
 

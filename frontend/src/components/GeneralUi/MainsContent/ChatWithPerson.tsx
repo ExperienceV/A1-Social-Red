@@ -17,6 +17,16 @@ function ChatWithPersonUI() {
         { text: 'Este es tu mensaje de respuesta', sender: 'self' }
     ]);
 
+    const colors = {
+        background: '#181A1F', // Un gris muy oscuro para el fondo
+        text: '#FFFFFF', // Blanco para el texto
+        inputBackground: '#282C34', // Un gris ligeramente más claro para el área de entrada
+        buttonBackground: '#61DAFB', // Un azul claro, vibrante para el botón
+        buttonHover: '#53B9EA', // Un azul un poco más oscuro para el hover del botón
+        otherMessageBackground: '#333333', // Un gris oscuro para los mensajes de otros
+        selfMessageBackground: '#007bff', // Azul para los mensajes propios
+    };
+
     const [message, setMessage] = useState('');
 
     const userStatus: UserStatus = {
@@ -31,13 +41,15 @@ function ChatWithPersonUI() {
         flexDirection: 'column',
         height: '100vh', 
         width: '100%', 
+        backgroundColor: colors.background,
+        color: colors.text,
     };
 
     const bannerStyle: CSSProperties = {
         display: 'flex',
         alignItems: 'center',
         padding: '10px',
-        backgroundColor: '#f0f0f0',
+        backgroundColor: colors.inputBackground,
         borderBottom: '1px solid #ccc',
     };
 
@@ -83,7 +95,7 @@ function ChatWithPersonUI() {
         padding: '10px 20px',
         borderRadius: '4px',
         border: 'none',
-        backgroundColor: '#007bff',
+        backgroundColor: colors.buttonBackground,
         color: 'white',
         cursor: 'pointer',
     };
@@ -115,7 +127,7 @@ function ChatWithPersonUI() {
                 <img src={userStatus.logo} alt="Logo" style={{...logoStyle, marginRight: '10px'}} />
             )}
             <div style={{
-                backgroundColor: msg.sender === 'self' ? '#007bff' : '#f0f0f0',
+                backgroundColor: msg.sender === 'self' ? colors.selfMessageBackground : colors.otherMessageBackground,
                 color: msg.sender === 'self' ? 'white' : 'black',
                 padding: '10px',
                 borderRadius: '10px',

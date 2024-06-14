@@ -3,6 +3,14 @@ interface CSSProperties {
 }
 
 function ArchivedPostsUI() {
+
+    const colors = {
+        background: '#181A1F', // Un gris muy oscuro para el fondo, similar al de PostUi
+        text: '#FFFFFF', // Blanco para el texto
+        postBackground: '#282C34', // Un gris ligeramente más claro para el fondo de los posts, similar al inputBackground de PostUi
+        highlight: '#61DAFB', // Un azul claro, vibrante para detalles
+    };
+
     const containerStyle: CSSProperties = {
         display: 'flex',
         flexDirection: 'column',
@@ -11,13 +19,13 @@ function ArchivedPostsUI() {
         padding: '1rem',
         overflowY: 'auto',
         width: '100%',
-        backgroundColor: '#121212',
-        color: '#FFFFFF',
+        backgroundColor: colors.background,
+        color: colors.text,
     };
 
     const postStyle: CSSProperties = {
-        backgroundColor: '#333333',
-        color: '#FFFFFF',
+        backgroundColor: colors.postBackground,
+        color: colors.text,
         borderRadius: '8px',
         padding: '15px',
         margin: '10px 0',

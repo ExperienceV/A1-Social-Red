@@ -3,10 +3,18 @@ interface CSSProperties {
 }
 
 function SettingsUI() {
+
+    const colors = {
+        background: '#181A1F', // Un gris muy oscuro para el fondo
+        text: '#FFFFFF', // Blanco para el texto
+        sectionBackground: '#282C34', // Un gris ligeramente más claro para el fondo de las secciones
+        divider: '#666666', // Un gris para los divisores
+    };
+
     const containerStyle: CSSProperties = {
         padding: '20px',
-        backgroundColor: '#121212',
-        color: '#FFFFFF',
+        backgroundColor: colors.background,
+        color: colors.text,
         width: '100%',
         fontFamily: 'Arial, sans-serif',
     };
@@ -32,7 +40,7 @@ function SettingsUI() {
     const hrStyle: CSSProperties = {
         border: '0',
         height: '1px',
-        backgroundColor: '#666',
+        backgroundColor: colors.divider,
         marginTop: '10px',
         marginBottom: '10px',
     };

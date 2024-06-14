@@ -7,6 +7,14 @@ interface CSSProperties {
 function PostUi() {
     const [newPostContent, setNewPostContent] = useState('');
 
+    const colors = {
+        background: '#181A1F', // Un gris muy oscuro para el fondo
+        text: '#FFFFFF', // Blanco para el texto
+        inputBackground: '#282C34', // Un gris ligeramente más claro para el área de entrada
+        buttonBackground: '#61DAFB', // Un azul claro, vibrante para el botón
+        buttonHover: '#53B9EA', // Un azul un poco más oscuro para el hover del botón
+      };
+
     const mainContainerStyle: CSSProperties = {
         display: 'flex',
         flexDirection: 'column',
@@ -15,13 +23,13 @@ function PostUi() {
         padding: '1rem',
         overflowY: 'auto',
         width: '50%',
-        backgroundColor: '#121212',
-        color: '#FFFFFF',
+        backgroundColor: colors.background,
+        color: colors.text,
     };
 
     const newPostContainerStyle: CSSProperties = {
-        backgroundColor: '#fff',
-        color: '#000',
+        backgroundColor: colors.inputBackground,
+        color: colors.text,
         borderRadius: '8px',
         padding: '15px',
         margin: '10px 0',
@@ -40,13 +48,24 @@ function PostUi() {
         marginBottom: '10px',
         borderRadius: '4px',
         border: '1px solid #ccc',
+        backgroundColor: 'white',
+    };
+
+    const placeHolderStyle: CSSProperties = {
+        width: '100%',
+        padding: '10px',
+        marginBottom: '10px',
+        borderRadius: '4px',
+        border: '1px solid #ccc',
+        backgroundColor: 'white',
+        color: "black",
     };
 
     const buttonStyle: CSSProperties = {
         padding: '10px 20px',
         borderRadius: '4px',
         border: 'none',
-        backgroundColor: '#007bff',
+        backgroundColor: colors.buttonBackground,
         color: 'white',
         cursor: 'pointer',
     };
@@ -79,7 +98,7 @@ function PostUi() {
         <aside style={mainContainerStyle}>
             <div style={newPostContainerStyle}>
                 <textarea
-                    style={inputStyle}
+                    style={placeHolderStyle}
                     value={newPostContent}
                     onChange={(e) => setNewPostContent(e.target.value)}
                     placeholder="¿Qué estás pensando?"

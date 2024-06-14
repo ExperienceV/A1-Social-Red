@@ -1,9 +1,16 @@
-
 interface CSSProperties {
     [key: string]: string | number;
 }
 
 function NotificationsUI() {
+
+    const colors = {
+        background: '#181A1F', // Un gris muy oscuro para el fondo
+        text: '#FFFFFF', // Blanco para el texto
+        notificationBackground: '#282C34', // Un gris ligeramente más claro para el fondo de las notificaciones
+        highlight: '#61DAFB', // Un azul claro, vibrante para detalles
+    };
+
     const containerStyle: CSSProperties = {
         display: 'flex',
         flexDirection: 'column',
@@ -12,13 +19,13 @@ function NotificationsUI() {
         padding: '1rem',
         overflowY: 'auto',
         width: '100%',
-        backgroundColor: '#121212',
-        color: '#FFFFFF',
+        backgroundColor: colors.background,
+        color: colors.text,
     };
 
     const notificationStyle: CSSProperties = {
-        backgroundColor: '#242424',
-        color: '#FFFFFF',
+        backgroundColor: colors.notificationBackground,
+        color: colors.text,
         borderRadius: '8px',
         padding: '15px',
         margin: '10px 0',

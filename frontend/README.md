@@ -1,25 +1,8 @@
-# A1-SOCIAL-RED Frontend
+# React + Vite
 
-Este es el repositorio del frontend de A1-SOCIAL-RED.
-By Dani.Dev.
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-## Tecnologías
+Currently, two official plugins are available:
 
-1. TailwindCss || Si no lo tienes `npm o npx, bun, yarn install -D tailwindcss`
-2. TypeScript || Si no lo tienes `npm o npx, bun, yarn  install typescript --save-dev`
-3. React
-4. Vite
-5. bun ~~No es obligatorio instalarlo~~
-
-## Instalación
-
-1. Clona este repositorio.
-2. Recuerda tener instalado nodejs.
-2. Instala las dependencias con `cd frontend` y luego `npm o npx, bun, yarn install`.
-
-## Uso
-
-1. Inicia la aplicación con `npm o npx, bun, yarn run dev` ¡Desde el directorio`frontend`!.
-2. Accede a `http://localhost:4000` en tu navegador.
-
-¡Disfruta de A1-SOCIAL-RED!
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
